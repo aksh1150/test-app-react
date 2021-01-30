@@ -1,7 +1,7 @@
-import React, { Component, useState, useEffect } from "react";
+import React, {useState, useEffect } from "react";
 import { getPractitioners } from "../services";
 
-class Practitioner extends Component {
+const Practitioner = () => {
   state = {
     practitioners: [],
   };
