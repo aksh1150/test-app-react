@@ -48,7 +48,7 @@ const Practitioner = () => {
           src={practitioner.photo}
           name={practitioner.name}
           gender={practitioner.gender}
-          dob={DateFormat(practitioner.dob)}
+          dob={practitioner.dob ? DateFormat(practitioner.dob) : ""}
         />
       ))}
     </div>
