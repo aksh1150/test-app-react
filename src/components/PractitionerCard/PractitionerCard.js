@@ -2,7 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./PractitionerCard.css";
 
-const PractitionerCard = ({ src, name, gender, dob, loading }) => {
+const PractitionerCard = ({
+  src,
+  name,
+  gender,
+  dob,
+  loading,
+  handleDelete,
+}) => {
   return (
     <div className="column">
       <div className="card">
@@ -25,6 +32,11 @@ const PractitionerCard = ({ src, name, gender, dob, loading }) => {
               <div>
                 <h5>DOB: </h5>
                 <p>{dob}</p>
+              </div>
+              <div className="btn-box">
+                <button onClick={handleDelete} className="btn-delete">
+                  Delete
+                </button>
               </div>
             </div>
           </>

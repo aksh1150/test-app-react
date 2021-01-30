@@ -29,3 +29,6 @@
 .card h5 {
   display: inline;
 }
+.card .btn-box {
+  margin-top: 20px;
+}
