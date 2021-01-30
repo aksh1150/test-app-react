@@ -1,16 +1,20 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { getPractitioners } from "../services";
 
-class Practitioner extends Component {
-  state = {
-    practitioners: [],
-  };
+const Practitioner = () => {
+ 
 
-  componentDidMount() {
-    getPractitioners().then((res) => {
+  const [practitioners, setPractitioners] = useState([]);
+
+  useEffect(() => {
+ getPractitioners().then((res) => {
       this.setState({ practitioners: this.flattenPractitionerObj(res) });
     });
-  }
+  })
+
+  // componentDidMount() {
+   
+  // }
 
   flattenPractitionerObj = (response) => {
     return (response.data.entry || []).map((item) => {
@@ -29,7 +33,7 @@ class Practitioner extends Component {
   };
 
   render() {
-    const { practitioners } = this.state;
+    // const { practitioners } = this.state;
     return (
       <table>
         <thead>
