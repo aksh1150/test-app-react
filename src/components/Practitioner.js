@@ -8,11 +8,17 @@ const Practitioner = () => {
 
   const [practitioners, setPractitioners] = useState([]);
 
-  componentDidMount() {
-    getPractitioners().then((res) => {
+  // componentDidMount() {
+  //   getPractitioners().then((res) => {
+  //     this.setState({ practitioners: this.flattenPractitionerObj(res) });
+  //   });
+  // }
+
+  useEffect(() => {
+getPractitioners().then((res) => {
       this.setState({ practitioners: this.flattenPractitionerObj(res) });
     });
-  }
+  }, [])
 
   flattenPractitionerObj = (response) => {
     return (response.data.entry || []).map((item) => {
