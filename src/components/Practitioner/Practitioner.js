@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getPractitioners } from "../../services";
+
 import PractitionerCard from "../PractitionerCard/PractitionerCard";
+import DateFormat from "../../utils/dateFormate";
 const Practitioner = () => {
   // state = {
   //   practitioners: [],
@@ -35,15 +37,7 @@ const Practitioner = () => {
       };
     });
   };
-  const DateFormat = (date) => {
-    date = new Date(date);
 
-    var day = ("0" + (date.getDate() + 1)).slice(-2);
-    var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    var year = date.getFullYear();
-
-    return year + "/" + month + "/" + day;
-  };
   // render() {
   //   const { practitioners } = this.state;
   return (
