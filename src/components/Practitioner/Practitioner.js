@@ -38,19 +38,7 @@ const Practitioner = () => {
 
   // render() {
   //   const { practitioners } = this.state;
-  return (
-    <>
-      {practitioners.map((practitioner) => (
-        <PractitionerCard
-          key={practitioner.id}
-          src={practitioner.photo}
-          name={practitioner.name}
-          gender={practitioner.gender}
-          dob={practitioner.dob}
-        />
-      ))}
-    </>
-  );
+  return <PractitionerCard data={practitioners} />;
 };
 // }
 
