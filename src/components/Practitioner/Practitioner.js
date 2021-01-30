@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getPractitioners } from "../../services";
-
+import PractitionerCard from "../PractitionerCard/PractitionerCard";
 const Practitioner = () => {
   // state = {
   //   practitioners: [],
@@ -41,6 +41,7 @@ const Practitioner = () => {
   return (
     <table>
       <thead>
+        <PractitionerCard />
         <tr>
           <th>Profile Image</th>
           <th>Full Name</th>
