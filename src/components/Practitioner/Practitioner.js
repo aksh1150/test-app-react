@@ -39,10 +39,10 @@ const Practitioner = () => {
   // render() {
   //   const { practitioners } = this.state;
   return (
-    <table>
-      <thead>
-        <PractitionerCard />
-        <tr>
+    <>
+      <PractitionerCard data={practitioners} />
+
+      {/* <tr>
           <th>Profile Image</th>
           <th>Full Name</th>
           <th>Gender</th>
@@ -65,7 +65,8 @@ const Practitioner = () => {
           </tr>
         ))}
       </tbody>
-    </table>
+    </table> */}
+    </>
   );
 };
 // }
