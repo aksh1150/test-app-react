@@ -6,7 +6,6 @@ const Practitioner = () => {
   //   practitioners: [],
   // };
 
-  const arry = [];
   const [practitioners, setPractitioners] = useState([]);
 
   // componentDidMount() {
