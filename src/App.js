@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-// import { getPatients } from "./services";
+import { getPatients } from "./services";
 
 import Practitioner from "./components/Practitioner/Practitioner";
 
@@ -14,27 +14,26 @@ function ErrorFallback({ error, resetErrorBoundary }) {
   );
 }
 
-const App = () => {
-  const [displayPage, setDisplayPage] = useState(true);
-  // componentDidMount() {
-  //   getPatients().then((res) => {
-  //     console.log(res);
-  //   });
-  // }
-  // render() {
-  return (
-    <>
-      <ErrorBoundary
-        FallbackComponent={ErrorFallback}
-        onReset={() => {
-          setDisplayPage(false);
-        }}
-      >
-        {displayPage ? <Practitioner /> : null}
-      </ErrorBoundary>
-    </>
-  );
-};
-// }
+class App extends Component {
+  componentDidMount() {
+    getPatients().then((res) => {
+      console.log(res);
+    });
+  }
+  render() {
+    return (
+      <>
+        <ErrorBoundary
+          FallbackComponent={ErrorFallback}
+          onReset={() => {
+            //
+          }}
+        >
+          <Practitioner />
+        </ErrorBoundary>
+      </>
+    );
+  }
+}
 
 export default App;
