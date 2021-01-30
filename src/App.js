@@ -1,18 +1,8 @@
 import React, { Component } from "react";
-import { ErrorBoundary } from "react-error-boundary";
 import { getPatients } from "./services";
 
 import Practitioner from "./components/Practitioner/Practitioner";
-
-function ErrorFallback({ error, resetErrorBoundary }) {
-  return (
-    <div role="alert">
-      <p>Something went wrong:</p>
-      <pre style={{ color: "red" }}>{error.message}</pre>
-      <button onClick={resetErrorBoundary}>Try again</button>
-    </div>
-  );
-}
+import ErrorBoundary from "./components/ErrorBoundry/ErrorBoundry";
 
 class App extends Component {
   componentDidMount() {
@@ -23,12 +13,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <ErrorBoundary
-          FallbackComponent={ErrorFallback}
-          onReset={() => {
-            //
-          }}
-        >
+        <ErrorBoundary>
           <Practitioner />
         </ErrorBoundary>
       </>
