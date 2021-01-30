@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./PractitionerCard.css";
 
-const PractitionerCard = () => {
+const PractitionerCard = ({ data }) => {
   return (
     <div className="row">
       <div className="column">
