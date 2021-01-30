@@ -1,0 +1,18 @@
+.btn-delete {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #f50016;
+  margin-top: 10px;
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+}
+.btn-no {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #02007c;
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  margin-right: 20px;
+}

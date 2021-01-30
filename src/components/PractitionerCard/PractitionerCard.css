@@ -32,12 +32,3 @@
 .card .btn-box {
   margin-top: 20px;
 }
-.card .btn-box .btn-delete {
-  cursor: pointer;
-  padding: 10px 20px;
-  background-color: #f50016;
-  margin-top: 10px;
-  color: #ffffff;
-  font-weight: 700;
-  border: none;
-}
