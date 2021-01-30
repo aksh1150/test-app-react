@@ -40,32 +40,15 @@ const Practitioner = () => {
   //   const { practitioners } = this.state;
   return (
     <>
-      <PractitionerCard data={practitioners} />
-
-      {/* <tr>
-          <th>Profile Image</th>
-          <th>Full Name</th>
-          <th>Gender</th>
-          <th>Date of Birth</th>
-        </tr>
-      </thead>
-      <tbody>
-        {practitioners.map((practitioner) => (
-          <tr key={practitioner.id}>
-            <td>
-              <img
-                src={practitioner.photo}
-                alt="Avatar"
-                style={{ height: 50, width: 50, borderRadius: "50%" }}
-              />
-            </td>
-            <td>{practitioner.name}</td>
-            <td>{practitioner.gender}</td>
-            <td>{practitioner.dob}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table> */}
+      {practitioners.map((practitioner) => (
+        <PractitionerCard
+          key={practitioner.id}
+          src={practitioner.photo}
+          name={practitioner.name}
+          gender={practitioner.gender}
+          dob={practitioner.dob}
+        />
+      ))}
     </>
   );
 };
