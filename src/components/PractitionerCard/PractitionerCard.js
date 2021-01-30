@@ -1,31 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./PractitionerCard.css";
 
-const PractitionerCard = ({ data }) => {
+const PractitionerCard = ({ src, name, gender, dob }) => {
   return (
     <div className="row">
-      {data.map((practitioner) => (
-        <div className="column" key={practitioner.id}>
-          <div className="card">
-            <img
-              src={practitioner.photo}
-              alt="Avatar"
-              style={{ height: 50, width: 50, borderRadius: "50%" }}
-            />
+      <div className="column">
+        <div className="card">
+          <img
+            src={src}
+            alt="Avatar"
+            style={{ height: 50, width: 50, borderRadius: "50%" }}
+          />
+          <div className="left">
             <div>
-              <h3>Name: </h3>
-              <h5>{practitioner.name}</h5>
+              <h3>Name: {name}</h3>
             </div>
             <div>
-              <h5>Gender: </h5>
-              <p>{practitioner.gender}</p>
+              <h5>Gender: </h5> <p>{gender}</p>
             </div>
             <div>
-              <h5>DOB: </h5> <p>{practitioner.dob}</p>
+              <h5>DOB: </h5>
+              <p>{dob}</p>
             </div>
           </div>
         </div>
-      ))}
+      </div>
     </div>
   );
 };
