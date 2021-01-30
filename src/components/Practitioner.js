@@ -2,9 +2,11 @@ import React, {useState, useEffect } from "react";
 import { getPractitioners } from "../services";
 
 const Practitioner = () => {
-  state = {
-    practitioners: [],
-  };
+  // state = {
+  //   practitioners: [],
+  // };
+
+  const [practitioners, setPractitioners] = useState([]);
 
   componentDidMount() {
     getPractitioners().then((res) => {
