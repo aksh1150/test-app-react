@@ -30,15 +30,19 @@ const Practitioner = () => {
 
   return (
     <div className="row">
-      {practitioners.map((practitioner) => (
-        <PractitionerCard
-          key={practitioner.id}
-          src={practitioner.photo}
-          name={practitioner.name}
-          gender={practitioner.gender}
-          dob={practitioner.dob ? DateFormat(practitioner.dob) : ""}
-        />
-      ))}
+      {practitioners.length > 0 ? (
+        practitioners.map((practitioner) => (
+          <PractitionerCard
+            key={practitioner.id}
+            src={practitioner.photo}
+            name={practitioner.name}
+            gender={practitioner.gender}
+            dob={practitioner.dob ? DateFormat(practitioner.dob) : ""}
+          />
+        ))
+      ) : (
+        <PractitionerCard loading="Loading.." />
+      )}
     </div>
   );
 };
