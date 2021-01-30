@@ -43,7 +43,11 @@ const Practitioner = () => {
           <PractitionerCard
             key={practitioner.id}
             src={practitioner.photo}
-            name={practitioner.name}
+            name={
+              practitioner.name.includes("undefined")
+                ? "N/A"
+                : practitioner.name
+            }
             gender={practitioner.gender}
             dob={practitioner.dob ? DateFormat(practitioner.dob) : ""}
           />
