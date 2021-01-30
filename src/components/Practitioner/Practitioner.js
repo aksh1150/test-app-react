@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getPractitioners } from "../../services";
 import PractitionerCard from "../PractitionerCard/PractitionerCard";
+import Loading from "../Loading/Loading";
 import DateFormat from "../../utils/dateFormate";
 import "./Practitioner.css";
 
@@ -78,7 +79,7 @@ const Practitioner = () => {
 
       <div className="row">
         {loading ? (
-          <PractitionerCard loading="Loading..." />
+          <Loading />
         ) : (
           practitioners.map((practitioner) => (
             <PractitionerCard
