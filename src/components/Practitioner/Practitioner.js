@@ -34,6 +34,10 @@ const Practitioner = () => {
     });
   };
 
+  const deletePractitioners = (id) => {
+    console.log(id);
+  };
+
   return (
     <div className="row">
       {loading ? (
@@ -50,6 +54,7 @@ const Practitioner = () => {
             }
             gender={practitioner.gender}
             dob={practitioner.dob ? DateFormat(practitioner.dob) : ""}
+            handleDelete={() => deletePractitioners(practitioner.id)}
           />
         ))
       )}
