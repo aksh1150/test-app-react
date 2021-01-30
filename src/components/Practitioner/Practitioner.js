@@ -54,13 +54,20 @@ const Practitioner = () => {
 
   return (
     <>
-      <div className="confirmModel">
-        <h3>Are you sure, you want to delete this record?</h3>
-        <button className="btn-no">No</button>
-        <button onClick={confirmDelete} className="btn-delete">
-          Yes
-        </button>
+      <div
+        className={
+          isConfirmDialogOpen ? "confirmBakground show" : "confirmBakground"
+        }
+      >
+        <div className="confirmModel">
+          <h3>Are you sure, you want to delete this record?</h3>
+          <button onClick={confirmDelete} className="btn-delete">
+            Yes
+          </button>
+          <button className="btn-no">No</button>
+        </div>
       </div>
+
       <div className="row">
         {loading ? (
           <PractitionerCard loading="Loading..." />

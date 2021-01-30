@@ -6,7 +6,9 @@
   color: #ffffff;
   font-weight: 700;
   border: none;
+  margin-right: 50px;
 }
+
 .btn-no {
   cursor: pointer;
   padding: 10px 20px;
@@ -14,5 +16,27 @@
   color: #ffffff;
   font-weight: 700;
   border: none;
-  margin-right: 20px;
+}
+
+.confirmBakground {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.confirmBakground.show {
+  display: block;
+}
+
+.confirmModel {
+  border: 1px solid #000000;
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  padding: 20px;
+  background-color: #ffffff;
 }
