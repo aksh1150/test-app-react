@@ -33,8 +33,10 @@ const PractitionerCard = ({
                 <h5>DOB: </h5>
                 <p>{dob}</p>
               </div>
-              <div>
-                <a onClick={handleDelete}>Delete</a>
+              <div className="btn-box">
+                <a onClick={handleDelete} className="btn-delete">
+                  Delete
+                </a>
               </div>
             </div>
           </>

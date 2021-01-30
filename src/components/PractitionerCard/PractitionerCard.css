@@ -29,3 +29,15 @@
 .card h5 {
   display: inline;
 }
+.card .btn-box {
+  margin-top: 20px;
+}
+.card .btn-box .btn-delete {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #f50016;
+  margin-top: 10px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: 700;
+}
