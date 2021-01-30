@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { getPractitioners } from "../../services";
-
 import PractitionerCard from "../PractitionerCard/PractitionerCard";
 import DateFormat from "../../utils/dateFormate";
 import "./Practitioner.css";
