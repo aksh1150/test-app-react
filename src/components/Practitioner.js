@@ -4,17 +4,11 @@ import { getPractitioners } from "../services";
 const Practitioner = () => {
   const [practitioners, setPractitioners] = useState([]);
 
-  useEffect(() => {
-    getPractitioners().then((res) => {
-      this.setState({ practitioners: this.flattenPractitionerObj(res) });
-    });
-  });
-
   // componentDidMount() {
 
   // }
 
-  flattenPractitionerObj = (response) => {
+  const flattenPractitionerObj = (response) => {
     return (response.data.entry || []).map((item) => {
       const name = item.resource.name || [];
       return {
@@ -29,6 +23,13 @@ const Practitioner = () => {
       };
     });
   };
+
+  useEffect(() => {
+    getPractitioners().then((res) => {
+      // this.setState({ practitioners: this.flattenPractitionerObj(res) });
+      setPractitioners({ practitioners: this.flattenPractitionerObj(res) });
+    });
+  });
 
   // render() {
   // const { practitioners } = this.state;
