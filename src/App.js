@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { getPatients } from "./services";
 
+import Practitioner from "./components/Practitioner";
+
 class App extends Component {
   componentDidMount() {
     getPatients().then((res) => {
@@ -8,7 +10,7 @@ class App extends Component {
     });
   }
   render() {
-    return <p>Check the console!</p>;
+    return <Practitioner />;
   }
 }
 
