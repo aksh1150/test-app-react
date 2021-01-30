@@ -39,7 +39,7 @@ const Practitioner = () => {
   // render() {
   //   const { practitioners } = this.state;
   return (
-    <>
+    <div className="row">
       {practitioners.map((practitioner) => (
         <PractitionerCard
           key={practitioner.id}
@@ -49,7 +49,7 @@ const Practitioner = () => {
           dob={practitioner.dob}
         />
       ))}
-    </>
+    </div>
   );
 };
 // }
