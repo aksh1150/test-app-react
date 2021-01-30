@@ -34,9 +34,9 @@ const PractitionerCard = ({
                 <p>{dob}</p>
               </div>
               <div className="btn-box">
-                <a onClick={handleDelete} className="btn-delete">
+                <button onClick={handleDelete} className="btn-delete">
                   Delete
-                </a>
+                </button>
               </div>
             </div>
           </>

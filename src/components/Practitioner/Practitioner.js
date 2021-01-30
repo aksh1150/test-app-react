@@ -34,8 +34,13 @@ const Practitioner = () => {
     });
   };
 
-  const deletePractitioners = (id) => {
-    console.log(id);
+  const deletePractitioners = async (id) => {
+    // console.log("practitioners", practitioners);
+    const newPractitionerObject = await practitioners.filter(
+      (e) => e.id !== id
+    );
+    setPractitioners(newPractitionerObject);
+    // console.log("delete practitioners", practitioners);
   };
 
   return (
