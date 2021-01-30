@@ -48,8 +48,15 @@ const Practitioner = () => {
     const newPractitionerObject = await practitioners.filter(
       (e) => e.id !== deleteId
     );
-    setPractitioners(newPractitionerObject);
+    await setPractitioners(newPractitionerObject);
+    await setIsConfirmDialogOpen(false);
+    await setDeleteId(null);
     // console.log("delete practitioners", practitioners);
+  };
+
+  const notDelete = () => {
+    setIsConfirmDialogOpen(false);
+    setDeleteId(null);
   };
 
   return (
@@ -64,7 +71,9 @@ const Practitioner = () => {
           <button onClick={confirmDelete} className="btn-delete">
             Yes
           </button>
-          <button className="btn-no">No</button>
+          <button className="btn-no" onClick={notDelete}>
+            No
+          </button>
         </div>
       </div>
 
