@@ -27,7 +27,7 @@ const Practitioner = () => {
   useEffect(() => {
     getPractitioners().then((res) => {
       // this.setState({ practitioners: this.flattenPractitionerObj(res) });
-      setPractitioners({ practitioners: this.flattenPractitionerObj(res) });
+      setPractitioners({ practitioners: flattenPractitionerObj(res) });
     });
   });
 
