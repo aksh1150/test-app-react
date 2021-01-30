@@ -6,6 +6,7 @@ const Practitioner = () => {
   //   practitioners: [],
   // };
 
+  const arry = [];
   const [practitioners, setPractitioners] = useState([]);
 
   // componentDidMount() {
@@ -16,7 +17,7 @@ const Practitioner = () => {
 
   useEffect(() => {
     getPractitioners().then((res) => {
-      setPractitioners({ practitioners: flattenPractitionerObj(res) });
+      setPractitioners(flattenPractitionerObj(res));
     });
   }, []);
 
