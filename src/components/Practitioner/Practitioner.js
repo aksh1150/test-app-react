@@ -5,10 +5,16 @@ import PractitionerCard from "../PractitionerCard/PractitionerCard";
 import DateFormat from "../../utils/dateFormate";
 const Practitioner = () => {
   const [practitioners, setPractitioners] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+  }, []);
 
   useEffect(() => {
     getPractitioners().then((res) => {
       setPractitioners(flattenPractitionerObj(res));
+      setLoading(false);
     });
   }, []);
 
@@ -30,7 +36,9 @@ const Practitioner = () => {
 
   return (
     <div className="row">
-      {practitioners.length > 0 ? (
+      {loading ? (
+        <PractitionerCard loading="Loading.." />
+      ) : (
         practitioners.map((practitioner) => (
           <PractitionerCard
             key={practitioner.id}
@@ -40,8 +48,6 @@ const Practitioner = () => {
             dob={practitioner.dob ? DateFormat(practitioner.dob) : ""}
           />
         ))
-      ) : (
-        <PractitionerCard loading="Loading.." />
       )}
     </div>
   );
