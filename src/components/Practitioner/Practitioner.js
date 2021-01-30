@@ -4,17 +4,7 @@ import { getPractitioners } from "../../services";
 import PractitionerCard from "../PractitionerCard/PractitionerCard";
 import DateFormat from "../../utils/dateFormate";
 const Practitioner = () => {
-  // state = {
-  //   practitioners: [],
-  // };
-
   const [practitioners, setPractitioners] = useState([]);
-
-  // componentDidMount() {
-  //   getPractitioners().then((res) => {
-  //     this.setState({ practitioners: this.flattenPractitionerObj(res) });
-  //   });
-  // }
 
   useEffect(() => {
     getPractitioners().then((res) => {
@@ -38,8 +28,6 @@ const Practitioner = () => {
     });
   };
 
-  // render() {
-  //   const { practitioners } = this.state;
   return (
     <div className="row">
       {practitioners.map((practitioner) => (
@@ -54,6 +42,5 @@ const Practitioner = () => {
     </div>
   );
 };
-// }
 
 export default Practitioner;
