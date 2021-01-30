@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import "./PractitionerCard.css";
 
 const PractitionerCard = ({ src, name, gender, dob }) => {
@@ -25,6 +26,12 @@ const PractitionerCard = ({ src, name, gender, dob }) => {
       </div>
     </div>
   );
+};
+PractitionerCard.propTypes = {
+  src: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  gender: PropTypes.string,
+  dob: PropTypes.string,
 };
 
 export default PractitionerCard;
