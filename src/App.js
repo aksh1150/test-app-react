@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { getPatients } from "./services";
 
-import Practitioner from "./components/Practitioner";
+import Practitioner from "./components/Practitioner/Practitioner";
 
 class App extends Component {
   componentDidMount() {
